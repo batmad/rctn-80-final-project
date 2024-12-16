@@ -14,9 +14,14 @@ const Search = ({ handleSearch }) => {
         handleSearch(input)
     }
 
+    const handleClear = () => {
+        setInput("");
+    }
+
     return (
         <form className="d-flex ms-auto my-2 my-lg-0" role="search" onSubmit={handleSubmit}>
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={input} onChange={handleInputChange}/>
+            <input className="form-control me-2" type="text" placeholder="Search" aria-label="Search" value={input} onChange={handleInputChange}/>
+            <button type="button" className="btn btn-outline-danger me-2" onClick={handleClear}>X</button>
             <button className="btn btn-outline-success" type="submit">
                 Search
             </button>
